@@ -5,6 +5,11 @@ const Telegram = require('telegram-node-bot')
 const TelegramBaseInlineQueryController = Telegram.TelegramBaseInlineQueryController
 const tg = new Telegram.Telegram(process.env.TELEGRAM_BOT_TOKEN, {
     workers: 1,
+    webhook: {
+        url: process.env.WEBHOOK_URL,
+        port: process.env.PORT || 3000,
+        host: process.env.WEBHOOK_HOST || 'localhost'
+    }
 })
 
 class DuckController extends TelegramBaseInlineQueryController {

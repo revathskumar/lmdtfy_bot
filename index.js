@@ -8,7 +8,7 @@ const tg = new Telegram.Telegram(process.env.TELEGRAM_BOT_TOKEN, {
     webhook: {
         url: process.env.WEBHOOK_URL,
         port: process.env.WEBHOOK_PORT || 3000,
-        host: 'localhost'
+        host: process.env.WEBHOOK_HOST || 'localhost'
     }
 })
 
